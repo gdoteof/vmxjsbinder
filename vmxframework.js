@@ -7,12 +7,14 @@ var vmxconnections = injector.get('vmxconnections');
 $vmx.models = injector.get('vmxmodels');
 $vmx.connections = injector.get('vmxconnections');
 $vmx.detectorFactory = injector.get('VmxDetectorProviderX');
+$vmx.imageStreamProvider     = injector.get('vmxImageStreamProvider');
+$vmx.defaultStream = $vmx.imageStreamProvider.getInstance(document.getElementById('video-vmx-vmx'));
 
 $vmx.defaultDetector = $vmx.detectorFactory.getInstance();
+$vmx.defaultDetector.setVideoSrc($vmx.defaultStream);
 $vmx.detect = $vmx.defaultDetector.detect
 console.log("shit is ready yo");
 
-  $vmx.init();
   
 });
 
