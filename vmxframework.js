@@ -1,3 +1,4 @@
+//test
 var $vmx = {};
 $(document).ready(function(){
   $vmx.ready = false;
